@@ -1,47 +1,29 @@
 <!doctype html>
 <html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>T2D — X4 Lite (Browser)</title>
-  <meta name="description" content="Ein leichter X4-Foundation-ähnlicher Prototyp im Browser: Fliegen, Minen, Handeln, Upgrades.">
-  <link rel="stylesheet" href="css/styles.css" />
-  <!-- PixiJS über CDN (keine Installation nötig) -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js"></script>
-  <script defer src="js/main.js"></script>
-</head>
-<body>
-  <div id="hud" class="hud">
-    <div class="row">
-      <span>⚙️ Version:</span><strong id="version">v0.1.0</strong>
-      <span>🚀 Schiff HP:</span><strong id="hp">100</strong>
-      <span>🧊 Cargo:</span><strong id="cargo">0/30</strong>
-      <span>🪙 Credits:</span><strong id="credits">0</strong>
-      <span>🛰️ Ziel:</span><strong id="target">—</strong>
-      <span>📍 Sektor:</span><strong id="sector">Alpha</strong>
-      <span>💾 Auto-Save:</span><strong id="autosave">an</strong>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T2D — X4 Lite (TS)</title>
+  </head>
+  <body>
+    <div id="hud" style="position:fixed;left:0;top:0;width:100%;padding:.5rem .75rem;background:rgba(5,8,18,.8);color:#d6e2ff;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;display:flex;gap:.5rem;flex-wrap:wrap;">
+      <span>⚙️ <b id="v">v0.2.0</b></span>
+      <span>HP: <b id="hp">100</b></span>
+      <span>Cargo: <b id="cargo">0/30</b></span>
+      <span>Credits: <b id="credits">0</b></span>
+      <span>Ziel: <b id="target">—</b></span>
+      <span>Sektor: <b id="sector">Alpha</b></span>
+      <span>💾 <b id="autosave">an</b></span>
+      <span style="opacity:.8">WASD/Pfeile · Space minen · E docken · 1/2/3 Antrieb</span>
     </div>
-    <div class="row small">
-      <span>Steuerung: Pfeile/WASD fliegen • Leertaste minen • E andocken/Handel • M Karte • 1/2/3 Triebwerk</span>
+    <div id="dock" style="position:fixed;right:1rem;top:4rem;min-width:320px;background:#0f1628;border:1px solid #263352;border-radius:16px;padding:1rem;color:#e7f2ff;display:none;">
+      <h3>Station & Handel</h3>
+      <button id="sell">Erz verkaufen</button>
+      <button id="cargoUp">Cargo +10 (1.000₵)</button>
+      <button id="repair">Reparieren (200₵)</button>
+      <button id="undock">Abkoppeln (E)</button>
+      <div id="dockInfo" style="margin-top:.5rem;opacity:.9;"></div>
     </div>
-  </div>
-
-  <div id="dockPanel" class="panel hidden">
-    <h3>Station & Handel</h3>
-    <p>Du bist angedockt. Verkaufe Erze und rüste dein Schiff auf.</p>
-    <div class="shop">
-      <div class="shop-row">
-        <button id="sellOre">Erz verkaufen (+Preis dynamisch)</button>
-        <span id="sellInfo"></span>
-      </div>
-      <div class="shop-row">
-        <button id="upgradeCargo">Cargo +10 (1.000₵)</button>
-        <button id="repairShip">Reparieren (200₵)</button>
-      </div>
-    </div>
-    <button id="undock">Abkoppeln (E)</button>
-  </div>
-
-  <div id="miniMap" class="minimap hidden" aria-hidden="true"></div>
-</body>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
