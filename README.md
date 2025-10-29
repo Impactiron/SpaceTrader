@@ -1,35 +1,28 @@
-# T2D — X4 Lite (TypeScript + Vite + PixiJS)
+# T2D — X4 Lite (Browser, No-Build)
 
-**Version:** v0.2.0 · **Stack:** TypeScript, Vite, PixiJS 7  
-**Ziel:** Browser-Spiel im Stil von X4 (2D/2.5D).
+**Version:** v0.1.0  
+**Stack:** Reines HTML + JS + CSS mit [PixiJS CDN] – _keine Installation nötig_.  
+**MVP-Loop:** Fliegen · Asteroiden minen (Leertaste) · an Station andocken (E) · Erz verkaufen · Upgrades · Autosave (localStorage).
 
-## Zero-Install: GitHub Pages via Actions
-1. Neues GitHub-Repo erstellen und Projekt hochladen.
-2. `Settings → Pages`: auf **GitHub Actions** stellen (falls nötig).
-3. In `Settings → Secrets and variables → Actions` ein Repository Secret **BASE** anlegen: `/<REPO_NAME>/`
-4. Push auf `main` → Aktion baut & deployed nach `gh-pages`.
+## Schnellstart (lokal oder GitHub Pages)
+1. Entpacke das ZIP.
+2. Öffne `index.html` **direkt** im Browser (oder hoste den Ordner auf GitHub Pages/Netlify).
+3. Steuerung:
+   - **WASD / Pfeile**: Flug/Rotation
+   - **Leertaste**: Minen
+   - **E**: Andocken / Abkoppeln
+   - **1/2/3**: Triebwerksstufen
+   - **M**: Minimap ein/aus
 
-> Hinweis: Workflow nutzt **npm install** statt `npm ci`, damit kein Lockfile nötig ist.
+## Deploy auf GitHub Pages
+- Neues Repo erstellen, Ordner-Inhalt pushen.
+- **Settings → Pages → Branch `main` / root** aktivieren.
+- Seite öffnet sich unter `https://<user>.github.io/<repo>/`.
 
-## Lokal (optional)
-```bash
-npm install
-npm run dev
-# oder
-npm run build && npm run preview
-```
-
-## Steuerung
-- WASD/Pfeile: Flug/Rotation
-- Space: Minen
-- E: Dock/Undock
-- 1/2/3: Triebwerksstufen
-
-## Dateien
-- `src/main.ts` – Spiel-Loop, Szene, Input, Mining
-- `vite.config.ts` – `base` für GitHub Pages (alternativ via Secret BASE)
-- `.github/workflows/deploy.yml` – Build & Deploy
-- `index.html` – HUD/Panel
-
-## Roadmap
-Nutze die separate `ROADMAP.md`.
+## Nächste Schritte (Roadmap kurz)
+- Waffen & einfache Gegner (Piraten)
+- Handelsgüter (mehr als Erz), Preisdynamik pro Station
+- Sektor-Gates + zweite Karte
+- Fraktionsruf & Patrouillen
+- Docking-UI: Module/Slots, Triebwerks-/Laser-Upgrades
+- Save/Load auf **IndexedDB** migrieren (größere Daten)
