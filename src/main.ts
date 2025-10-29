@@ -16,7 +16,7 @@ type SaveShape = {
   sector: string;
 };
 
-const SAVE_KEY = 't2d_x4_ts_v020';
+const SAVE_KEY = 'spacetrader_ts_v020';
 const readSave = (): SaveShape | null => {
   try{
     const raw = localStorage.getItem(SAVE_KEY);
@@ -228,11 +228,12 @@ function update(dt:number){
     const turnR = (state.keys['d']||state.keys['arrowright']) ? 1 : 0;
 
     state.player.angle += (turnR - turnL) * dt * 0.003 * (1 + state.player.thrustLevel*0.2);
-    ship.rotation = state.player.angle;
+    const rot = state.player.angle;
+    ship.rotation = rot;
 
     const thrust = (acc - dec) * spd * 0.0035;
-    state.player.vx += Math.cos(state.player.angle) * thrust;
-    state.player.vy += Math.sin(state.player.angle) * thrust;
+    state.player.vx += Math.cos(rot) * thrust;
+    state.player.vy += Math.sin(rot) * thrust;
     state.player.vx *= 0.992;
     state.player.vy *= 0.992;
     state.player.x += state.player.vx * dt * 0.06;

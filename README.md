@@ -1,15 +1,11 @@
-# T2D — X4 Lite (TypeScript + Vite + PixiJS)
+# SpaceTrader — X4 Lite (TypeScript + Vite + PixiJS)
 
 **Version:** v0.2.0 · **Stack:** TypeScript, Vite, PixiJS 7  
 **Ziel:** Browser-Spiel im Stil von X4 (2D/2.5D).
 
-## Zero-Install: GitHub Pages via Actions
-1. Neues GitHub-Repo erstellen und Projekt hochladen.
-2. `Settings → Pages`: auf **GitHub Actions** stellen (falls nötig).
-3. In `Settings → Secrets and variables → Actions` ein Repository Secret **BASE** anlegen: `/<REPO_NAME>/`
-4. Push auf `main` → Aktion baut & deployed nach `gh-pages`.
-
-> Hinweis: Workflow nutzt **npm install** statt `npm ci`, damit kein Lockfile nötig ist.
+## GitHub Pages (ohne Secret)
+- `vite.config.ts` ist bereits auf **'/SpaceTrader/'** gesetzt.
+- Push auf `main` genügt → GitHub Action baut & deployed auf **gh-pages**.
 
 ## Lokal (optional)
 ```bash
@@ -27,9 +23,8 @@ npm run build && npm run preview
 
 ## Dateien
 - `src/main.ts` – Spiel-Loop, Szene, Input, Mining
-- `vite.config.ts` – `base` für GitHub Pages (alternativ via Secret BASE)
+- `vite.config.ts` – base = '/SpaceTrader/'
 - `.github/workflows/deploy.yml` – Build & Deploy
 - `index.html` – HUD/Panel
 
-## Roadmap
-Nutze die separate `ROADMAP.md`.
+**Seiten-URL (Beispiel):** https://impactiron.github.io/SpaceTrader/
