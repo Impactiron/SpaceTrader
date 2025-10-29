@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T2D — X4 Lite (TS)</title>
+  </head>
+  <body>
+    <div id="hud" style="position:fixed;left:0;top:0;width:100%;padding:.5rem .75rem;background:rgba(5,8,18,.8);color:#d6e2ff;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;display:flex;gap:.5rem;flex-wrap:wrap;">
+      <span>⚙️ <b id="v">v0.2.0</b></span>
+      <span>HP: <b id="hp">100</b></span>
+      <span>Cargo: <b id="cargo">0/30</b></span>
+      <span>Credits: <b id="credits">0</b></span>
+      <span>Ziel: <b id="target">—</b></span>
+      <span>Sektor: <b id="sector">Alpha</b></span>
+      <span>💾 <b id="autosave">an</b></span>
+      <span style="opacity:.8">WASD/Pfeile · Space minen · E docken · 1/2/3 Antrieb</span>
+    </div>
+    <div id="dock" style="position:fixed;right:1rem;top:4rem;min-width:320px;background:#0f1628;border:1px solid #263352;border-radius:16px;padding:1rem;color:#e7f2ff;display:none;">
+      <h3>Station & Handel</h3>
+      <button id="sell">Erz verkaufen</button>
+      <button id="cargoUp">Cargo +10 (1.000₵)</button>
+      <button id="repair">Reparieren (200₵)</button>
+      <button id="undock">Abkoppeln (E)</button>
+      <div id="dockInfo" style="margin-top:.5rem;opacity:.9;"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
