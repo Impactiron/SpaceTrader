@@ -1,30 +1,31 @@
-# SpaceTrader — X4 Lite (TypeScript + Vite + PixiJS)
+project_memory.md
 
-**Version:** v0.2.0 · **Stack:** TypeScript, Vite, PixiJS 7  
-**Ziel:** Browser-Spiel im Stil von X4 (2D/2.5D).
+# Projekt Status: HARVEST MOON REMASTERED (iPad Edition)
 
-## GitHub Pages (ohne Secret)
-- `vite.config.ts` ist bereits auf **'/SpaceTrader/'** gesetzt.
-- Push auf `main` genügt → GitHub Action baut & deployed auf **gh-pages**.
+## Dateibaum
+- index.html
+- game.js
+- src/core/Constants.js
+- src/data/GridManager.js
+- src/scenes/FarmScene.js
 
-## Lokal (optional)
-```bash
-npm install
-npm run dev
-# oder
-npm run build && npm run preview
-```
+## Globale Variablen & State
+- Grid Größe: 60x57 Tiles
+- Tile Größe: 16px
+- Speicher: Uint16Array (Bitmasking aktiv)
 
-## Steuerung
-- WASD/Pfeile: Flug/Rotation
-- Space: Minen
-- E: Dock/Undock
-- 1/2/3: Triebwerksstufen
+## Letzte Änderung
+- Implementierung Core Architecture (Bitmasking System)
+- Implementierung GridManager (Low-level Data)
+- Implementierung FarmScene mit Tilemap Rendering und Fallback-Grafiken
 
-## Dateien
-- `src/main.ts` – Spiel-Loop, Szene, Input, Mining
-- `vite.config.ts` – base = '/SpaceTrader/'
-- `.github/workflows/deploy.yml` – Build & Deploy
-- `index.html` – HUD/Panel
+## Nächster Schritt
+- Implementierung der Interaktion (Player Controller & Input Handling)
+- Implementierung "Smart Touch" UI für iPad
 
-**Seiten-URL (Beispiel):** https://impactiron.github.io/SpaceTrader/
+## Aktueller Code-Hash
+- src/core/Constants.js
+- src/data/GridManager.js
+- src/scenes/FarmScene.js
+- game.js
+- index.html
